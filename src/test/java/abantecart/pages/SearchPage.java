@@ -5,13 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import abantecart.utility.BaseTest;
 import abantecart.utility.Utilities;
 
-public class SearchPage {
+public class SearchPage extends BaseTest{
 	
 
 	Utilities utilitiesObj=new Utilities();	
-	public WebDriver driver=utilitiesObj.browserSetup();
+	//public WebDriver driver=utilitiesObj.browserSetup();;
 
 	//@FindBy(xpath="//*[@id=\"filter_keyword\"]")
 	public By searchBoxWeb=By.xpath("//input[@id='filter_keyword']");

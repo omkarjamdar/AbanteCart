@@ -16,6 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 import abantecart.pages.*;
@@ -25,15 +26,9 @@ import abantecart.utility.Utilities;
 import abantecart.pages.*;
 public class RegisterPageTest extends BaseTest
 {
+		
 	   
 		RegisterPage register = new RegisterPage();
-		/*public RegisterPageTest(WebDriver driver)
-		{
-			this.driver=driver;
-			
-		}*/
-		//Login_Flow login = new Login_Flow();
-		//public WebDriver driver;
 		public FileInputStream input2;
 		public File source2;
 		public Workbook wb2;
@@ -42,7 +37,8 @@ public class RegisterPageTest extends BaseTest
 		public Logger logger;
 		public String expectedError;
 		public String message;
-	    //public String username, password;
+		public int var=1;
+		public int var1=0;
 		WebDriverWait wait2;
 		List<String> firstname =new ArrayList<String>();
 		List<String> lastname =new ArrayList<String>();
@@ -55,40 +51,45 @@ public class RegisterPageTest extends BaseTest
 		List<String> confirmpassword =new ArrayList<String>();
 		List<String> state =new ArrayList<String>();
 		List<String> country =new ArrayList<String>();
-		Utilities util = new Utilities();
+		public String firstnamelength;
+		public String lastnamelength;
+		public String emaillength;
+		public String addresslength;
+		public String citylength;
+		public String zipcodelength;
+		public String registerloginnamelength;
+		public String registerpasswordlength;
+		public String confirmpasswordlength;
+		public String statelength;
+		
+		//Utilities util = new Utilities();
+		
+		@BeforeClass
+		public void registerPageSetup() 
+		{
+			
+			driver.get("http://localhost/public_html/");
+			logger = BaseTest.log4jSetup("RegisterPageTest");
+			var=1;	
+		}
+		public void sheetDeclare(int var)
+		{
+		this.var=var;
+		if(var1==1)
+		logger.info(var);
+
+		}
+		
+		public void RegisterPageSetup(String className)
+		{
+			this.logger=BaseTest.log4jSetup(className);
+		}
 		
 		@BeforeClass
 		public void registerSetup()
-		{
-			// Calling the utilities class and fetching data from excel file
-			
-				//driver = register.driver;
-					/*source2 = new File(util.registerFile);
-					input2 = new FileInputStream(source2);
-					wb2 = new XSSFWorkbook(input2);
-					sheet2 = (XSSFSheet) wb2.getSheetAt(0);
-					length=sheet2.getLastRowNum() + 1;
-					System.out.println(length);
-
-					for(int i=0;i<sheet2.getLastRowNum()+1;i++)
-					{
-						firstname.add(sheet2.getRow(i).getCell(0).getStringCellValue());
-						lastname.add(sheet2.getRow(i).getCell(1).getStringCellValue());
-						email.add(sheet2.getRow(i).getCell(2).getStringCellValue());
-						address.add(sheet2.getRow(i).getCell(3).getStringCellValue());
-						city.add(sheet2.getRow(i).getCell(4).getStringCellValue());
-						zipcode.add(sheet2.getRow(i).getCell(5).getNumericCellValue());
-						state.add(sheet2.getRow(i).getCell(6).getStringCellValue());
-						country.add(sheet2.getRow(i).getCell(7).getStringCellValue());
-						registerloginname.add(sheet2.getRow(i).getCell(8).getStringCellValue());
-						registerpassword.add(sheet2.getRow(i).getCell(9).getStringCellValue());
-						confirmpassword.add(sheet2.getRow(i).getCell(10).getStringCellValue());
-						
-						
-						//util.userLogin("Shetty_3579", "asdf1234",driver);					
-					}*/
+		{	   
 				    ReadExcelFile read = new ReadExcelFile();
-				    List<List<String>> registration=read.registration(0);				// Fetching loginname and email using forgotPasswordCredentials method of ReadExcel File        
+				    List<List<String>> registration=read.registration(var);				// Fetching loginname and email using forgotPasswordCredentials method of ReadExcel File        
 					firstname.addAll(registration.get(0));
 					lastname.addAll(registration.get(1));
 					email.addAll(registration.get(2));
@@ -100,52 +101,7 @@ public class RegisterPageTest extends BaseTest
 					registerloginname.addAll(registration.get(8));
 					registerpassword.addAll(registration.get(9));
 					confirmpassword.addAll(registration.get(10));
-					logger = util.log4jSetup("RegisterPageTest");
-					System.out.print(country);
-
-					
-					 //driver.get("http://localhost/public_html/");
-					
-					//System.out.println(Sheet.getLastRowNum());
-					
-		}		
-
-		
-			
-		/*public void Sample()
-		{
-			register.registerLink().click();
-			register.registerContinue().click();
-			register.registerFirstName().click();
-			register.registerFirstName().sendKeys("Ajit");
-			register.registerLastName().click();
-			register.registerLastName().sendKeys("Rai");
-			register.registerEmail().click();
-			register.registerEmail().sendKeys("ajitshetty6667@gmail.com");
-			register.registerAddress().click();
-			register.registerAddress().sendKeys("Vishrambhag");
-			register.registerCity().click();
-			register.registerCity().sendKeys("Sangli");
-			register.registerState().click();
-			register.registerState().sendKeys("Florida");
-			//Select se = new Select(register.registerState());
-			//se.selectByVisibleText("Maharastra");
-			register.registerZipCode().click();
-			register.registerZipCode().sendKeys("416416");
-			//register.registerCountry().click();
-			//Select se1 = new Select(register.registerCountry());
-			//se1.selectByVisibleText("India");
-			register.registerLoginName().click();
-			register.registerLoginName().sendKeys("AjitShetty1234");
-			register.registerPassword().click();
-			register.registerPassword().sendKeys("ajit@1234");
-			register.registerConfirmPassword().click();
-			register.registerConfirmPassword().sendKeys("ajit@1234");
-			register.registerSubscribeNo().click();
-			register.registerAgree().click();
-			register.registerContinueNext().click();
-		}*/
-
+		}
 		@Test(priority=1)
 		public void Registration() throws InterruptedException
 		{
@@ -153,10 +109,32 @@ public class RegisterPageTest extends BaseTest
 			
 			for (int i = 0; i < length; i++) 
 		{
+			firstnamelength = firstname.get(i);
+			lastnamelength = firstname.get(i);
+			firstnamelength = lastname.get(i);
+			emaillength = email.get(i);
+			addresslength = address.get(i);
+			citylength = city.get(i);
+			zipcodelength = zipcode.get(i);
+			registerloginnamelength = registerloginname.get(i);
+			registerpasswordlength = registerpassword.get(i);
+			confirmpasswordlength = confirmpassword.get(i);
+			statelength = state.get(i);
             if(i==0 || i==1)
 			{
-            	register.registerLink().click();
+            	//if(var==0)
+            	//{
+            		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+            		register.registerLink().click();
+            		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+            	//}
+            		if(var1==1)
+            		logger.info("Before");
+            	driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
             	register.registerContinue().click();
+            	driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+            	if(var1==1)
+            	logger.info("After");
 			}
             register.registerFirstName().clear();
             if(i!=1)
@@ -165,70 +143,118 @@ public class RegisterPageTest extends BaseTest
             	register.registerFirstName().sendKeys(firstname.get(i));
             }
             register.registerLastName().clear();
-            if(i!=2)
+            if(lastnamelength.length()>2)
             {
             	register.registerLastName().click();
             	register.registerLastName().sendKeys(lastname.get(i));
             }
             register.registerEmail().clear();
-            if(i!=3)
+            if(emaillength.length()>2)
             {
             	register.registerEmail().click();
             	register.registerEmail().sendKeys(email.get(i));
             }
             register.registerAddress().clear();
-            if(i!=4)
+            if(addresslength.length()>2)
             {
             	register.registerAddress().click();	
             	register.registerAddress().sendKeys(address.get(i));
             }
             register.registerCity().clear();
-            if(i!=5)
+            if(citylength.length()>2)
             {
             	register.registerCity().click();
             	register.registerCity().sendKeys(city.get(i));
             }
 			register.registerCountry().click();
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 			register.registerCountry().sendKeys("India");
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-			if(i!=6)
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+			if(statelength.length()>2)
 			{
 			register.registerState().click();
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 			register.registerState().sendKeys("Maharastra");
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 			}
 			register.registerZipCode().clear();
-			if(i!=7)
+			if(zipcodelength.length()>2)
 			{
 				register.registerZipCode().click();
+				driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 				register.registerZipCode().sendKeys(zipcode.get(i));
+				driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 			}
 			register.registerLoginName().clear();
-			if(i!=9)
+			if(registerloginnamelength.length()>2)
 			{
 			register.registerLoginName().click();
 			register.registerLoginName().sendKeys(registerloginname.get(i));
 			}
-			if(i!=10)
+			if(registerpasswordlength.length()>2)
 			{
 				register.registerPassword().click();
 				register.registerPassword().sendKeys(registerpassword.get(i));
 			}
-			if(i!=11)
+			if(confirmpasswordlength.length()>2)
 			{
 				register.registerConfirmPassword().click();
 				register.registerConfirmPassword().sendKeys(confirmpassword.get(i));
 			}
 			register.registerSubscribeNo().click();
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 			register.registerAgree().click();
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 			register.registerContinueNext().click();
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 			if(i==0)
 			{
 				register.Logofflink();
 			}
 		}
 			
+		}
+		
+		@SuppressWarnings("deprecation")
+		public void Registration_Integration() throws InterruptedException
+		{
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+			register.registerContinue().click();
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+			register.registerFirstName().click();
+        	register.registerFirstName().sendKeys(firstname.get(0));
+        	register.registerLastName().click();
+        	register.registerLastName().sendKeys(lastname.get(0));
+        	register.registerEmail().click();
+        	register.registerEmail().sendKeys(email.get(0));
+        	register.registerAddress().click();	
+        	register.registerAddress().sendKeys(address.get(0));
+        	register.registerCity().click();
+        	register.registerCity().sendKeys(city.get(0));
+        	driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+        	register.registerCountry().click();
+        	driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+			register.registerCountry().sendKeys("India");
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+			register.registerState().click();
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+			register.registerState().sendKeys("Maharastra");
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+			register.registerZipCode().click();
+			register.registerZipCode().sendKeys(zipcode.get(0));
+			register.registerLoginName().click();
+			register.registerLoginName().sendKeys(registerloginname.get(0));
+			register.registerPassword().click();
+			register.registerPassword().sendKeys(registerpassword.get(0));
+			register.registerConfirmPassword().click();
+			register.registerConfirmPassword().sendKeys(confirmpassword.get(0));
+			register.registerSubscribeNo().click();
+			register.registerAgree().click();
+			register.registerContinueNext().click();
+        	
 		}
 	}
 

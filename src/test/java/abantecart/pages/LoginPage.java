@@ -4,12 +4,14 @@ package abantecart.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import abantecart.utility.BaseTest;
 import abantecart.utility.Utilities;
 
-public class LoginPage
+public class LoginPage extends BaseTest
 {
 	Utilities util=new Utilities();
-	public WebDriver driver=util.browserSetup();
+	//public WebDriver driver=util.browserSetup();
 
 	By loginlink = By.xpath("//a[normalize-space()='Login or register']");
 	public WebElement loginLink()

@@ -13,12 +13,14 @@ import abantecart.testcase.SetupDriver;
 public class ScreenShot extends BaseTest
 {
 	
-	public void getScreenshot() throws IOException
+	public String getScreenshot() throws IOException
 	{
 		System.setProperty("webdriver.chrome.driver", "D:/chromedriver_win32/chromedriver.exe");
 		Date currentdate = new Date();
 		String screenshotefilename = currentdate.toString().replace(" ", "-").replace(":", "-");
 		File screenshotFile =((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshotFile,new File(".//screenshot" + screenshotefilename + ".png"));
+		//FileUtils.copyFile(screenshotFile,new File(".//screenshot" + screenshotefilename + ".png"));
+		FileUtils.copyFile(screenshotFile,new File(".//screenshot//" + screenshotefilename + ".png"));
+		return screenshotefilename;
 	}
 }

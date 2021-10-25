@@ -3,6 +3,7 @@
 <suite name="Suite">
 <listeners>
 <listener class-name="abantecart.utility.Listeners"></listener>
+<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
 </listeners>
 <test name="Test">
 <classes>

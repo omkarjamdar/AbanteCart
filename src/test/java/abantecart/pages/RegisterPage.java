@@ -1,5 +1,6 @@
 package abantecart.pages;
 import java.sql.Driver;
+import org.openqa.selenium.By;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.By;
@@ -11,7 +12,12 @@ import org.testng.annotations.Test;
 import abantecart.utility.*;
 
 public class RegisterPage extends BaseTest {
-	
+	Utilities util = new Utilities();
+	//public WebDriver driver;
+	/*public RegisterPage(WebDriver driver)
+	{
+		this.driver=driver;
+	}*/
 	//Utilities utility=new Utilities();
 	//public WebDriver driver=utility.browserSetup();
 	

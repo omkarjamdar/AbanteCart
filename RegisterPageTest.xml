@@ -7,6 +7,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="abantecart.testcase.RegisterPageTest"/>
+      <parameter name="type" value="1"></parameter>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

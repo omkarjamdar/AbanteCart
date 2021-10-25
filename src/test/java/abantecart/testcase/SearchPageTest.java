@@ -1,10 +1,8 @@
 package abantecart.testcase;
-
 import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
@@ -13,22 +11,33 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.apache.log4j.Logger;
+
 
 import abantecart.pages.SearchPage;
+import abantecart.utility.BaseTest;
 import abantecart.utility.Utilities;
 
-public class SearchPageTest {
+
+public class SearchPageTest extends BaseTest{
 	SearchPage searchObj=new SearchPage();
-	Utilities utilitiesObj=new Utilities();	
-	WebDriver  driver;
+	AccountMainPageTest acc = new AccountMainPageTest();
+	//Utilities util=new Utilities();	
+	//WebDriver  driver;
 	public Logger logger;
-	
 	
 	@BeforeClass
 	public void setup() {
-		driver=searchObj.driver;
-		utilitiesObj.userLogin("user_test", "pass",driver);
-		logger = utilitiesObj.log4jSetup("SearchPageTest");
+		//driver=searchObj.driver;
+		driver.get("http://localhost/public_html/");
+		userLogin("user_test", "pass",driver);
+		logger = BaseTest.log4jSetup("SearchPageTest");
+		
+	}
+	
+	public void searchPageSetup(String className)
+	{
+		this.logger=BaseTest.log4jSetup(className);
 	}
 	
 	@Test(priority = 1)
@@ -46,6 +55,7 @@ public class SearchPageTest {
 	
 	@Test(priority=3)
 	public void searchByCategories() throws InterruptedException, IOException {
+		logger.info("Click on searchBox");
 		searchObj.searchBox().click();
 		searchObj.searchCategory().click();
 		searchObj.serchBtn().click();
@@ -56,6 +66,23 @@ public class SearchPageTest {
 		FileUtils.copyFile(srcFile, new File("D:\\AbanteCart\\src\\test\\java\\abantecart\\resources\\screenshots\\searchByCategory.png"));
 
 	}
-	
-	
+	//on click of search button open search page
+		@Test(priority=4)
+		public void openSearchpage()
+		{
+			searchObj.searchBox().click();
+			String expectedUrl="http://localhost/public_html/index.php?rt=product/search&category_id=0";
+			String actualUrl=driver.getCurrentUrl();
+			if(expectedUrl.equals(actualUrl))
+			{
+				System.out.println("Search Page is open on Click of Search Button");
+			}
+		}
+		
+		@Test(priority = 15)
+		public void loggoff()
+		{
+			acc.logoffCheck();
+		}
+
 }

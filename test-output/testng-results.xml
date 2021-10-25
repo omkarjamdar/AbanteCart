@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="16" passed="16" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[The method Name is: verifyAddToCartWithoutSize]]>
+    </line>
+    <line>
+      <![CDATA[The Status of verifyAddToCartWithoutSize execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: verifyProductImageThumbnails]]>
+    </line>
+    <line>
+      <![CDATA[The Status of verifyProductImageThumbnails execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: verifyProductTitle]]>
+    </line>
+    <line>
+      <![CDATA[The Status of verifyProductTitle execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: productColor]]>
+    </line>
+    <line>
+      <![CDATA[The Status of productColor execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: productQuantity]]>
+    </line>
+    <line>
+      <![CDATA[The Status of productQuantity execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: productSize]]>
+    </line>
+    <line>
+      <![CDATA[The Status of productSize execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: verifyBreadCrumbs]]>
+    </line>
+    <line>
+      <![CDATA[The Status of verifyBreadCrumbs execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: verifyHowerOverProductImage]]>
+    </line>
+    <line>
+      <![CDATA[The Status of verifyHowerOverProductImage execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: verifyLatestProductSection]]>
+    </line>
+    <line>
+      <![CDATA[The Status of verifyLatestProductSection execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: verifyProductSizeDisable]]>
+    </line>
+    <line>
+      <![CDATA[The Status of verifyProductSizeDisable execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: verifyProductAddToWishlist]]>
+    </line>
+    <line>
+      <![CDATA[The Status of verifyProductAddToWishlist execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: verifyProductAddToCart]]>
+    </line>
+    <line>
+      <![CDATA[The Status of verifyProductAddToCart execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: verifyMultipleAddToCart]]>
+    </line>
+    <line>
+      <![CDATA[The Status of verifyMultipleAddToCart execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: verifyLatestProductAdd]]>
+    </line>
+    <line>
+      <![CDATA[The Status of verifyLatestProductAdd execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: verifyRelatedProductAdd]]>
+    </line>
+    <line>
+      <![CDATA[The Status of verifyRelatedProductAdd execution is: 1]]>
+    </line>
+    <line>
+      <![CDATA[The method Name is: loggoff]]>
+    </line>
+    <line>
+      <![CDATA[The Status of loggoff execution is: 1]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2021-10-25T14:19:03 IST" name="Suite" finished-at="2021-10-25T14:19:36 IST" duration-ms="33190">
+    <groups>
+      <group name="Functional">
+        <method signature="ProductPageTest.verifyProductAddToWishlist()[pri:2, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" name="verifyProductAddToWishlist" class="abantecart.testcase.ProductPageTest"/>
+      </group> <!-- Functional -->
+      <group name="UI">
+        <method signature="ProductPageTest.verifyProductImageThumbnails()[pri:0, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" name="verifyProductImageThumbnails" class="abantecart.testcase.ProductPageTest"/>
+        <method signature="ProductPageTest.verifyProductTitle()[pri:0, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" name="verifyProductTitle" class="abantecart.testcase.ProductPageTest"/>
+      </group> <!-- UI -->
+      <group name="Regression">
+        <method signature="ProductPageTest.verifyProductAddToWishlist()[pri:2, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" name="verifyProductAddToWishlist" class="abantecart.testcase.ProductPageTest"/>
+        <method signature="ProductPageTest.verifyProductImageThumbnails()[pri:0, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" name="verifyProductImageThumbnails" class="abantecart.testcase.ProductPageTest"/>
+        <method signature="ProductPageTest.verifyProductTitle()[pri:0, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" name="verifyProductTitle" class="abantecart.testcase.ProductPageTest"/>
+      </group> <!-- Regression -->
+    </groups>
+    <test started-at="2021-10-25T14:19:03 IST" name="Test" finished-at="2021-10-25T14:19:36 IST" duration-ms="33190">
+      <class name="abantecart.testcase.ProductPageTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:18:59 IST" name="launchBrowser" finished-at="2021-10-25T14:19:03 IST" duration-ms="4062" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="login()[pri:0, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:03 IST" name="login" finished-at="2021-10-25T14:19:11 IST" duration-ms="8756" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="verifyAddToCartWithoutSize()[pri:0, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:11 IST" name="verifyAddToCartWithoutSize" finished-at="2021-10-25T14:19:13 IST" duration-ms="2043" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: verifyAddToCartWithoutSize]]>
+            </line>
+            <line>
+              <![CDATA[The Status of verifyAddToCartWithoutSize execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyAddToCartWithoutSize -->
+        <test-method signature="verifyProductImageThumbnails()[pri:0, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:13 IST" name="verifyProductImageThumbnails" finished-at="2021-10-25T14:19:14 IST" duration-ms="298" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: verifyProductImageThumbnails]]>
+            </line>
+            <line>
+              <![CDATA[The Status of verifyProductImageThumbnails execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyProductImageThumbnails -->
+        <test-method signature="verifyProductTitle()[pri:0, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:14 IST" name="verifyProductTitle" finished-at="2021-10-25T14:19:14 IST" duration-ms="32" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: verifyProductTitle]]>
+            </line>
+            <line>
+              <![CDATA[The Status of verifyProductTitle execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyProductTitle -->
+        <test-method signature="productColor()[pri:1, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:14 IST" name="productColor" finished-at="2021-10-25T14:19:14 IST" duration-ms="50" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: productColor]]>
+            </line>
+            <line>
+              <![CDATA[The Status of productColor execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- productColor -->
+        <test-method signature="productQuantity()[pri:1, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:14 IST" name="productQuantity" finished-at="2021-10-25T14:19:14 IST" duration-ms="148" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: productQuantity]]>
+            </line>
+            <line>
+              <![CDATA[The Status of productQuantity execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- productQuantity -->
+        <test-method signature="productSize()[pri:1, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:14 IST" name="productSize" finished-at="2021-10-25T14:19:14 IST" duration-ms="64" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: productSize]]>
+            </line>
+            <line>
+              <![CDATA[The Status of productSize execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- productSize -->
+        <test-method signature="verifyBreadCrumbs()[pri:1, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:14 IST" name="verifyBreadCrumbs" finished-at="2021-10-25T14:19:14 IST" duration-ms="125" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: verifyBreadCrumbs]]>
+            </line>
+            <line>
+              <![CDATA[The Status of verifyBreadCrumbs execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyBreadCrumbs -->
+        <test-method signature="verifyHowerOverProductImage()[pri:1, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:14 IST" name="verifyHowerOverProductImage" finished-at="2021-10-25T14:19:14 IST" duration-ms="22" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: verifyHowerOverProductImage]]>
+            </line>
+            <line>
+              <![CDATA[The Status of verifyHowerOverProductImage execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyHowerOverProductImage -->
+        <test-method signature="verifyLatestProductSection()[pri:1, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:14 IST" name="verifyLatestProductSection" finished-at="2021-10-25T14:19:14 IST" duration-ms="55" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: verifyLatestProductSection]]>
+            </line>
+            <line>
+              <![CDATA[The Status of verifyLatestProductSection execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyLatestProductSection -->
+        <test-method signature="verifyProductSizeDisable()[pri:1, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:14 IST" name="verifyProductSizeDisable" finished-at="2021-10-25T14:19:14 IST" duration-ms="28" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: verifyProductSizeDisable]]>
+            </line>
+            <line>
+              <![CDATA[The Status of verifyProductSizeDisable execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyProductSizeDisable -->
+        <test-method signature="verifyProductAddToWishlist()[pri:2, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:14 IST" name="verifyProductAddToWishlist" finished-at="2021-10-25T14:19:15 IST" duration-ms="388" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: verifyProductAddToWishlist]]>
+            </line>
+            <line>
+              <![CDATA[The Status of verifyProductAddToWishlist execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyProductAddToWishlist -->
+        <test-method signature="verifyProductAddToCart()[pri:4, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:15 IST" name="verifyProductAddToCart" finished-at="2021-10-25T14:19:16 IST" duration-ms="1724" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: verifyProductAddToCart]]>
+            </line>
+            <line>
+              <![CDATA[The Status of verifyProductAddToCart execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyProductAddToCart -->
+        <test-method signature="verifyMultipleAddToCart()[pri:5, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:16 IST" name="verifyMultipleAddToCart" finished-at="2021-10-25T14:19:24 IST" duration-ms="8025" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: verifyMultipleAddToCart]]>
+            </line>
+            <line>
+              <![CDATA[The Status of verifyMultipleAddToCart execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyMultipleAddToCart -->
+        <test-method signature="verifyLatestProductAdd()[pri:6, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:24 IST" name="verifyLatestProductAdd" finished-at="2021-10-25T14:19:29 IST" duration-ms="4916" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: verifyLatestProductAdd]]>
+            </line>
+            <line>
+              <![CDATA[The Status of verifyLatestProductAdd execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyLatestProductAdd -->
+        <test-method signature="verifyRelatedProductAdd()[pri:7, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:29 IST" name="verifyRelatedProductAdd" finished-at="2021-10-25T14:19:35 IST" duration-ms="5209" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: verifyRelatedProductAdd]]>
+            </line>
+            <line>
+              <![CDATA[The Status of verifyRelatedProductAdd execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyRelatedProductAdd -->
+        <test-method signature="loggoff()[pri:15, instance:abantecart.testcase.ProductPageTest@51bd8b5c]" started-at="2021-10-25T14:19:35 IST" name="loggoff" finished-at="2021-10-25T14:19:36 IST" duration-ms="1211" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[The method Name is: loggoff]]>
+            </line>
+            <line>
+              <![CDATA[The Status of loggoff execution is: 1]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loggoff -->
+      </class> <!-- abantecart.testcase.ProductPageTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

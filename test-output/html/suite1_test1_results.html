@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/reportngClass.css" rel="stylesheet" />
+  <script type="text/javascript" src="js/reportngClass.js"></script>
+  <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script> 
+  <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+  <script type="text/javascript" src="js/json-min.js"></script>
+  <script type="text/javascript">
+	$(document).ready(function(){
+		$('.tablesorter').tablesorter({sortList: [[0,0]]});
+	});
+  </script>
+</head>
+<body onload="doParse(); return false;" onkeypress="collapseExpand();">
+<div class="well well-large">
+	<b>Test Info</>
+	<table class="table">
+	  <tr>
+	    <th>Test Name : </th>
+	    <th>
+	    	<div class="tooltipCustom">
+	    		<img src="images/copy.png" width="10" height="15" alt="Copy to Clipboard" onclick="copyToClipboard('#testNameId')"/>
+	    		<span class="tooltiptextCustom">Copy Test name</span>
+			</div>
+	    </th>
+	    <th id="testNameId">Test</th> 
+	  </tr>
+	  <tr>
+	    <th>Test Class : </th>
+	    <th>
+	    	<div class="tooltipCustom">
+	    		<img src="images/copy.png" width="10" height="15" alt="Copy to Clipboard" onclick="copyToClipboard('#testClassId')"/>
+	    		<span class="tooltiptextCustom">Copy full path Class name</span>
+			</div>
+	    	<div class="tooltipCustom">
+	    		<img src="images/copy.png" width="10" height="15" alt="Copy to Clipboard" onclick="copyToClipboard('#testClassNameId')"/>
+	    		<span class="tooltiptextCustom">Copy Class name</span>
+			</div>
+	    </th> 
+	    <th id="testClassId">abantecart.testcase.ProductPageTest</th>
+	    <th id="testClassNameId" hidden="true">ProductPageTest</th>
+	  </tr>
+	  <tr>
+	    <th>Suite Name : </th>
+	    <th>
+	    	<div class="tooltipCustom">
+	    		<img src="images/copy.png" width="10" height="15" alt="Copy to Clipboard" onclick="copyToClipboard('#suiteNameId')"/>
+	    		<span class="tooltiptextCustom">Copy Suite name</span>
+			</div>
+		</th>
+	    <th id="suiteNameId">Suite</th>
+	  </tr>
+	  <tr>
+	    <th>Suite XML : </th>
+	    <th>
+	    	<div class="tooltipCustom">
+	    		<img src="images/copy.png" width="10" height="15" alt="Copy to Clipboard" onclick="copyToClipboard('#suiteXMLId')"/>
+	    		<span class="tooltiptextCustom">Copy Suite full path name</span>
+			</div>
+	    	<div class="tooltipCustom">
+	    		<img src="images/copy.png" width="10" height="15" alt="Copy to Clipboard" onclick="copyToClipboard('#suiteXMLNameId')"/>
+	    		<span class="tooltiptextCustom">Copy Suite file name</span>
+			</div>
+	    </th> 
+	  	<th id="suiteXMLId">C:\Users\omkar_jamdar\eclipse-workspace\abantecart(5)\ProductPageTest.xml</th>
+	  	<th id="suiteXMLNameId" hidden="true">ProductPageTest.xml</th>
+	  </tr>
+	  	  <tr>
+	    <th>Total Time : </th>
+	    <th></th>
+	    <th>00:00:33</th> 
+	  </tr>
+	  <tr>
+	    <th>Total Steps : </th>
+	   	<th></th>
+	    <th>16</th> 
+	  </tr>
+	  <tr>
+	    <th>Status : </th>
+	    <th></th>
+	    <th><font color="green">PASS</font></th> 
+	  </tr>
+	</table>
+</div>
+<div class="well well-large">
+	<div class="row">
+		<div class="col-xs-12">
+	        <div class="text-right">
+	            <button id="hideResults" type="button" class="btn-danger" onclick="collapseExpand(this);" onkeypress="collapseExpand(this);" class="btn pull-right" title="Click or Press Any key to collapse/expand All Failed Tests and Configuration Methods">Show Only Failures</button>
+	        </div>
+	    </div>
+	</div>
+	<table class="tablesorter" border="1">
+		<thead>
+		<tr>
+		<th class="headerTime">Time</th>
+		<th class="headerTime" width="12%">Info</th>
+		<th class="headerTime" width="88%">Test</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+				
+				
+												
+				
+				
+												<tr>
+			<td class="time">1635151754751</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('18fea014-4365-4ee2-a691-00536974610b','block');changeSingleIcon('span-18fea014-4365-4ee2-a691-00536974610b');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-18fea014-4365-4ee2-a691-00536974610b' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151754751</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>verifyLatestProductSection</span><br>
+			<span class="description"><b>Description: </b></span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>1</font></span><br>
+						<span class="duration"><b>Duration: </b>0.055s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="18fea014-4365-4ee2-a691-00536974610b" style="display: block;">
+												The method Name is: verifyLatestProductSection<br>
+												The Status of verifyLatestProductSection execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151754727</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('205a1a86-1453-4540-960b-48210ab86157','block');changeSingleIcon('span-205a1a86-1453-4540-960b-48210ab86157');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-205a1a86-1453-4540-960b-48210ab86157' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151754727</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>verifyHowerOverProductImage</span><br>
+			<span class="description"><b>Description: </b></span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>1</font></span><br>
+						<span class="duration"><b>Duration: </b>0.022s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="205a1a86-1453-4540-960b-48210ab86157" style="display: block;">
+												The method Name is: verifyHowerOverProductImage<br>
+												The Status of verifyHowerOverProductImage execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151754839</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('76e8a6a3-7ed2-45ae-8172-16e65126b5ed','block');changeSingleIcon('span-76e8a6a3-7ed2-45ae-8172-16e65126b5ed');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-76e8a6a3-7ed2-45ae-8172-16e65126b5ed' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151754839</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>verifyProductAddToWishlist</span><br>
+			<span class="description"><b>Description: </b></span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>2</font></span><br>
+					<span class="description"><b>Groups: </b><font color='green'>Functional,Regression</font></span><br>
+				<span class="duration"><b>Duration: </b>0.388s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="76e8a6a3-7ed2-45ae-8172-16e65126b5ed" style="display: block;">
+												The method Name is: verifyProductAddToWishlist<br>
+												The Status of verifyProductAddToWishlist execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151754534</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('7fe599e1-a18b-4f88-8f7d-6ab19fb717e9','block');changeSingleIcon('span-7fe599e1-a18b-4f88-8f7d-6ab19fb717e9');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-7fe599e1-a18b-4f88-8f7d-6ab19fb717e9' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151754534</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>productSize</span><br>
+			<span class="description"><b>Description: </b></span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>1</font></span><br>
+						<span class="duration"><b>Duration: </b>0.064s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="7fe599e1-a18b-4f88-8f7d-6ab19fb717e9" style="display: block;">
+												The method Name is: productSize<br>
+												The Status of productSize execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151764980</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('c3dc5a2c-88d4-47fd-b7e4-c78f2449cb6c','block');changeSingleIcon('span-c3dc5a2c-88d4-47fd-b7e4-c78f2449cb6c');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-c3dc5a2c-88d4-47fd-b7e4-c78f2449cb6c' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151764980</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>verifyLatestProductAdd</span><br>
+			<span class="description"><b>Description: </b></span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>6</font></span><br>
+						<span class="duration"><b>Duration: </b>4.916s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="c3dc5a2c-88d4-47fd-b7e4-c78f2449cb6c" style="display: block;">
+												The method Name is: verifyLatestProductAdd<br>
+												The Status of verifyLatestProductAdd execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151755228</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('3995003c-9687-4b73-8648-928e795d0217','block');changeSingleIcon('span-3995003c-9687-4b73-8648-928e795d0217');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-3995003c-9687-4b73-8648-928e795d0217' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151755228</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>verifyProductAddToCart</span><br>
+			<span class="description"><b>Description: </b></span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>4</font></span><br>
+						<span class="duration"><b>Duration: </b>1.724s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="3995003c-9687-4b73-8648-928e795d0217" style="display: block;">
+												The method Name is: verifyProductAddToCart<br>
+												The Status of verifyProductAddToCart execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151775108</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('0e4b7de4-7aaf-40ea-ba7d-da31a655d6b4','block');changeSingleIcon('span-0e4b7de4-7aaf-40ea-ba7d-da31a655d6b4');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-0e4b7de4-7aaf-40ea-ba7d-da31a655d6b4' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151775108</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>loggoff</span><br>
+			<span class="description"><b>Description: </b></span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>15</font></span><br>
+						<span class="duration"><b>Duration: </b>1.211s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="0e4b7de4-7aaf-40ea-ba7d-da31a655d6b4" style="display: block;">
+												The method Name is: loggoff<br>
+												The Status of loggoff execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151754330</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('b9aac34d-d141-4570-99d8-c640572e8e72','block');changeSingleIcon('span-b9aac34d-d141-4570-99d8-c640572e8e72');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-b9aac34d-d141-4570-99d8-c640572e8e72' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151754330</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>productColor</span><br>
+			<span class="description"><b>Description: </b></span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>1</font></span><br>
+						<span class="duration"><b>Duration: </b>0.050s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="b9aac34d-d141-4570-99d8-c640572e8e72" style="display: block;">
+												The method Name is: productColor<br>
+												The Status of productColor execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151754384</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('0ff82ce6-eb38-414c-8167-9e267200f932','block');changeSingleIcon('span-0ff82ce6-eb38-414c-8167-9e267200f932');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-0ff82ce6-eb38-414c-8167-9e267200f932' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151754384</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>productQuantity</span><br>
+			<span class="description"><b>Description: </b></span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>1</font></span><br>
+						<span class="duration"><b>Duration: </b>0.148s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="0ff82ce6-eb38-414c-8167-9e267200f932" style="display: block;">
+												The method Name is: productQuantity<br>
+												The Status of productQuantity execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151754296</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('6d29401d-2f5c-4ba5-b979-f9c3518bfe30','block');changeSingleIcon('span-6d29401d-2f5c-4ba5-b979-f9c3518bfe30');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-6d29401d-2f5c-4ba5-b979-f9c3518bfe30' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151754296</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>verifyProductTitle</span><br>
+			<span class="description"><b>Description: </b></span><br>
+						<span class="description"><b>Groups: </b><font color='green'>UI,Regression</font></span><br>
+				<span class="duration"><b>Duration: </b>0.032s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="6d29401d-2f5c-4ba5-b979-f9c3518bfe30" style="display: block;">
+												The method Name is: verifyProductTitle<br>
+												The Status of verifyProductTitle execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151753996</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('26f9acaf-633e-4e8c-9e91-ac8ff134d8c1','block');changeSingleIcon('span-26f9acaf-633e-4e8c-9e91-ac8ff134d8c1');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-26f9acaf-633e-4e8c-9e91-ac8ff134d8c1' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151753996</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>verifyProductImageThumbnails</span><br>
+			<span class="description"><b>Description: </b></span><br>
+						<span class="description"><b>Groups: </b><font color='green'>UI,Regression</font></span><br>
+				<span class="duration"><b>Duration: </b>0.298s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="26f9acaf-633e-4e8c-9e91-ac8ff134d8c1" style="display: block;">
+												The method Name is: verifyProductImageThumbnails<br>
+												The Status of verifyProductImageThumbnails execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151769898</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('6f8656f1-21b2-431b-9fbf-cc545acc2de1','block');changeSingleIcon('span-6f8656f1-21b2-431b-9fbf-cc545acc2de1');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-6f8656f1-21b2-431b-9fbf-cc545acc2de1' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151769898</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>verifyRelatedProductAdd</span><br>
+			<span class="description"><b>Description: </b></span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>7</font></span><br>
+						<span class="duration"><b>Duration: </b>5.209s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="6f8656f1-21b2-431b-9fbf-cc545acc2de1" style="display: block;">
+												The method Name is: verifyRelatedProductAdd<br>
+												The Status of verifyRelatedProductAdd execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151754600</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('1efaab30-a45e-4180-9abd-ad176ed0d970','block');changeSingleIcon('span-1efaab30-a45e-4180-9abd-ad176ed0d970');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-1efaab30-a45e-4180-9abd-ad176ed0d970' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151754600</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>verifyBreadCrumbs</span><br>
+			<span class="description"><b>Description: </b></span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>1</font></span><br>
+						<span class="duration"><b>Duration: </b>0.125s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="1efaab30-a45e-4180-9abd-ad176ed0d970" style="display: block;">
+												The method Name is: verifyBreadCrumbs<br>
+												The Status of verifyBreadCrumbs execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151751947</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('ce07fa08-1155-492c-bcfa-0fa3f8d38737','block');changeSingleIcon('span-ce07fa08-1155-492c-bcfa-0fa3f8d38737');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-ce07fa08-1155-492c-bcfa-0fa3f8d38737' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151751947</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>verifyAddToCartWithoutSize</span><br>
+			<span class="description"><b>Description: </b></span><br>
+							<span class="duration"><b>Duration: </b>2.043s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="ce07fa08-1155-492c-bcfa-0fa3f8d38737" style="display: block;">
+												The method Name is: verifyAddToCartWithoutSize<br>
+												The Status of verifyAddToCartWithoutSize execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151756954</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('d10ec7ee-48d5-4cb5-912d-fa79fdfba887','block');changeSingleIcon('span-d10ec7ee-48d5-4cb5-912d-fa79fdfba887');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-d10ec7ee-48d5-4cb5-912d-fa79fdfba887' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151756954</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>verifyMultipleAddToCart</span><br>
+			<span class="description"><b>Description: </b></span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>5</font></span><br>
+						<span class="duration"><b>Duration: </b>8.025s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="d10ec7ee-48d5-4cb5-912d-fa79fdfba887" style="display: block;">
+												The method Name is: verifyMultipleAddToCart<br>
+												The Status of verifyMultipleAddToCart execution is: 1<br>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1635151754808</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('d9c6c7e6-b54a-4bab-b0e6-df9240aab711','block');changeSingleIcon('span-d9c6c7e6-b54a-4bab-b0e6-df9240aab711');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>abantecart.testcase.ProductPageTest</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-d9c6c7e6-b54a-4bab-b0e6-df9240aab711' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1635151754808</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>verifyProductSizeDisable</span><br>
+			<span class="description"><b>Description: </b></span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>1</font></span><br>
+						<span class="duration"><b>Duration: </b>0.028s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="d9c6c7e6-b54a-4bab-b0e6-df9240aab711" style="display: block;">
+												The method Name is: verifyProductSizeDisable<br>
+												The Status of verifyProductSizeDisable execution is: 1<br>
+								</td>
+	</div>
+</tr>
+					  
+	</tbody>
+	</table>
+</div>
+</body>
+</html>

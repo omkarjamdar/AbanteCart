@@ -38,11 +38,21 @@ public class ReadExcelFile
 	List<String> confirmpassword =new ArrayList<String>();
 	List<String> state =new ArrayList<String>();
 	List<String> country =new ArrayList<String>();
+	
+	List<String> accFname=new ArrayList<String>();
+	List<String> accLname =new ArrayList<String>();
+	List<String> accEmail =new ArrayList<String>();
+	List<String> acccurrentpassword =new ArrayList<String>();
+	List<String> newpassword =new ArrayList<String>();
+	List<String> accconfirmpassword =new ArrayList<String>();
+	List<String> data = new ArrayList<String>();
+	public String acccity,fname,lname,accaddress,city2;
+	public double acczipcode,zipcode2;
 
 		
 	public void setup(int sheetnum)
 	{
-		src = new File("D:\\Login Credentials.xlsx");
+		src = new File("D:\\resource\\Register_Data.xlsx");
 		try 
 		{
 			FileInput = new FileInputStream(src);
@@ -63,28 +73,6 @@ public class ReadExcelFile
 		
 	}
 	
-	public void setupforregistration(int sheetnum)
-	{
-		src = new File("D:\\Register_Data.xlsx");
-		try 
-		{
-			FileInput = new FileInputStream(src);
-			wb = new XSSFWorkbook(FileInput);
-			Sheet = (XSSFSheet) wb.getSheetAt(sheetnum);
-			length=Sheet.getLastRowNum() + 1;
-		} 
-		catch (FileNotFoundException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-		catch (IOException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
 	
 	public List<List<String>> loginCredentials(int sheetnum)
 	{
@@ -132,7 +120,7 @@ public class ReadExcelFile
 	
 	public List<List<String>> registration(int sheetnum)
 	{
-		setupforregistration(sheetnum);
+		setup(sheetnum);
 		for(int i=0;i<Sheet.getLastRowNum()+1;i++)
 		{
 			firstname.add(Sheet.getRow(i).getCell(0).getStringCellValue());
@@ -157,6 +145,42 @@ public class ReadExcelFile
 		List<List<String>>  registration;
 		registration=Arrays.asList(firstname,lastname,email,address,city,zipcode,state,country,registerloginname,registerpassword,confirmpassword);
 		return registration;	
+	}
+	
+	public List<List<String>> account(int sheetnum)
+	{
+		setup(sheetnum);
+		for(int i=0;i<=2;i++)
+		{
+			
+		    accFname.add(Sheet.getRow(i).getCell(0).getStringCellValue());
+			accLname.add(Sheet.getRow(i).getCell(1).getStringCellValue());
+			accEmail.add(Sheet.getRow(i).getCell(2).getStringCellValue());
+				
+		}
+		for(int j=3;j<=5;j++)
+		{
+			acccurrentpassword.add(Sheet.getRow(j).getCell(0).getStringCellValue());
+			newpassword.add(Sheet.getRow(j).getCell(1).getStringCellValue());
+			accconfirmpassword.add(Sheet.getRow(j).getCell(2).getStringCellValue());
+		}
+		
+		data.add(Sheet.getRow(6).getCell(0).getStringCellValue());
+		acczipcode=Sheet.getRow(6).getCell(1).getNumericCellValue();
+		String acc_zipcode = Double.toString(acczipcode);
+		data.add(acc_zipcode);
+		data.add(Sheet.getRow(7).getCell(0).getStringCellValue());
+		data.add(Sheet.getRow(7).getCell(1).getStringCellValue());
+		data.add(Sheet.getRow(7).getCell(2).getStringCellValue());
+		data.add(Sheet.getRow(7).getCell(3).getStringCellValue());
+		zipcode2=Sheet.getRow(7).getCell(4).getNumericCellValue();
+		String zip2 = Double.toString(zipcode2);
+		data.add(zip2);
+		
+		
+		List<List<String>>  account;
+		account=Arrays.asList(accFname,accLname,accEmail,acccurrentpassword,newpassword,accconfirmpassword,data);
+		return account;
 	}
 	
 }

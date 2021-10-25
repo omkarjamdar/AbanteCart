@@ -206,7 +206,7 @@ public class AccountMainPage extends BaseTest
 		return driver.findElement(wishlistcontinue);
 	}
 	
-	By wishlistaddtocart = By.xpath("//*[@id=\"maincontainer\"]/div/div[1]/div/div/div/table/tbody/tr[2]/td[6]/a[1]");
+	By wishlistaddtocart = By.xpath("//a[@class=\"btn.btn-sm.btn-primary\"]");
 	public WebElement wishListAddToCart()
 	{
 		return driver.findElement(wishlistaddtocart);

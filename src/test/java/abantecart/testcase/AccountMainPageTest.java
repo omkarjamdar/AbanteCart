@@ -1,5 +1,6 @@
 package abantecart.testcase;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import java.io.File;
 import abantecart.utility.*;
@@ -20,24 +21,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import abantecart.pages.AccountMainPage;
-import abantecart.utility.Utilities;
-import junit.framework.Assert;
+
 
 //@Listeners(abantecart.utility.Listeners.class)
 public class AccountMainPageTest extends BaseTest
 {
 	AccountMainPage account = new AccountMainPage();
-	//WebDriver driver;
-	Utilities util = new Utilities();
+	//Utilities util = new Utilities();
 	public String expectedError;
 	public String message;
-	//Login_Flow login = new Login_Flow();
 	public FileInputStream input2;
 	public File source2;
 	public Workbook wb2;
 	public XSSFSheet sheet2;
 	public Logger logger; 
-    //public String username, password;
+	public int var=0;
 	WebDriverWait wait2;
 	List<String> Fname=new ArrayList<String>();
 	List<String> Lname =new ArrayList<String>();
@@ -45,92 +43,36 @@ public class AccountMainPageTest extends BaseTest
 	List<String> currentpassword =new ArrayList<String>();
 	List<String> newpassword =new ArrayList<String>();
 	List<String> confirmpassword =new ArrayList<String>();
-	public String city,fname,lname,address,city2;
-	public double zipcode,zipcode2;
-	
-	
-	
-	@BeforeClass
+	List<String> data =new ArrayList<String>();	
+	@BeforeClass(alwaysRun=true)
 		public void accountSetup1()
 		{
-			//driver=account.driver;
-			// Calling the utilities class and fetching data from excel file
-		
-			try
-			{
-					source2 = new File(util.accountFile);
-					input2 = new FileInputStream(source2);
-					wb2 = new XSSFWorkbook(input2);
-					sheet2 = (XSSFSheet) wb2.getSheetAt(0);
-					
-					/*Fname.add("Ajit");
-					Fname.add("Ajit");
-					Fname.add("");
-					Lname.add("Shetty");
-					Lname.add("Shetty");
-					Lname.add("Shetty");
-					Email.add("ajitshetty2000@gmail.com");
-					Email.add("ajitshettygmail.com");
-					Email.add("ajitshetty123@gmail.com");
-					currentpassword.add("asdf1234");
-					currentpassword.add("dmlw@1234");
-					currentpassword.add("dmlw@1234");
-					newpassword.add("dmlw1234");
-					newpassword.add("asdf1234");
-					newpassword.add("asdf1234");
-					confirmpassword.add("dmlw1234");
-					confirmpassword.add("asdf1234");
-					confirmpassword.add("asdf@1234");*/
-					for(int i=0;i<=2;i++)
-					{
-						
-					    Fname.add(sheet2.getRow(i).getCell(0).getStringCellValue());
-						Lname.add(sheet2.getRow(i).getCell(1).getStringCellValue());
-						Email.add(sheet2.getRow(i).getCell(2).getStringCellValue());
-							
-					}
-					for(int j=3;j<=5;j++)
-					{
-						currentpassword.add(sheet2.getRow(j).getCell(0).getStringCellValue());
-						newpassword.add(sheet2.getRow(j).getCell(1).getStringCellValue());
-						confirmpassword.add(sheet2.getRow(j).getCell(2).getStringCellValue());
-					}
-					
-					city=sheet2.getRow(6).getCell(0).getStringCellValue();
-					zipcode=sheet2.getRow(6).getCell(1).getNumericCellValue();
-					fname=sheet2.getRow(7).getCell(0).getStringCellValue();
-					lname=sheet2.getRow(7).getCell(1).getStringCellValue();
-					address=sheet2.getRow(7).getCell(2).getStringCellValue();
-					city2=sheet2.getRow(7).getCell(3).getStringCellValue();
-					zipcode2=sheet2.getRow(7).getCell(4).getNumericCellValue();
-					
-					
-					util.userLogin("Shetty_3579", "asdf1234",driver);
-					logger = util.log4jSetup("AccountMainPageTest");
-					
-					
-					
-					//System.out.println(Sheet.getLastRowNum());
-					
-			}
-			catch (FileNotFoundException e)
-			{
-				e.printStackTrace();
-			}
-			catch (IOException e)
-			{
-				e.printStackTrace();
-			}
+			var=1;
+			driver.get("http://localhost/public_html/");
+			ReadExcelFile read = new ReadExcelFile();
+			List<List<String>> account=read.account(3);
+			Fname.addAll(account.get(0));
+			Lname.addAll(account.get(1));
+			Email.addAll(account.get(2));
+			currentpassword.addAll(account.get(3));
+			newpassword.addAll(account.get(4));
+			confirmpassword.addAll(account.get(5));
+			data.addAll(account.get(6));
+			logger = BaseTest.log4jSetup("AccountMainPageTest");
+
 		}
-
-
-	
-
+	public void accountSetup(String className)
+	{
+		this.logger=BaseTest.log4jSetup(className);
+	}
 		
-	@Test(priority=1)								// Checking whether on clicking Edit_Account Info Redirection is done
+	@Test(groups= {"Functional"},priority=1)								// Checking whether on clicking Edit_Account Info Redirection is done
 	public void editInfoCheck()
 	{
+		userLogin("omkar","omkar", driver);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		account.editInfoLink().click();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		account.logoff().click();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
@@ -140,7 +82,7 @@ public class AccountMainPageTest extends BaseTest
 	public void editWithCorrectData()			// Editing account info with correct information
 	{
 	   String actualError=actualError = "Oops, there is an error with information provided!";
-	   util.userLogin("Shetty_3579","asdf1234", driver);
+	   userLogin("omkar","omkar", driver);
 	   account.editInfoLink().click();
 	   account.editInfoFname().click();
 	   account.editInfoFname().clear();
@@ -156,7 +98,7 @@ public class AccountMainPageTest extends BaseTest
 	   expectedError = driver.findElement(By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]")).getText();
 	   expectedError=expectedError.substring(1);
 	   message= (expectedError.length() == actualError.length()) ? "Wrong Information" : "SuccessFully Edited" ;
-	   System.out.println(message);
+	   if(var==1)
 	   logger.info(message+" For "+Fname.get(0));
 	}
 	
@@ -179,7 +121,7 @@ public class AccountMainPageTest extends BaseTest
 	   expectedError = driver.findElement(By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]")).getText();
 	   expectedError=expectedError.substring(1);
 	   message= (expectedError.length() == actualError.length()) ? "Wrong Information Provided" : "SuccessFully Edited" ;
-	   System.out.println(message);
+	   if(var==1)
 	   logger.info(message+" For "+Fname.get(1));
 	  
 	}
@@ -189,13 +131,13 @@ public class AccountMainPageTest extends BaseTest
 	{
 		String actualError=actualError = "Oops, there is an error with information provided!";
 	   account.editInfoLink().click();
-	   Thread.sleep(3000);
+	   driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	   //account.editInfoFname().click();
 	   account.editInfoFname().clear();
-	   Thread.sleep(3000);
+	   driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	   //account.editInfoFname().sendKeys(Fname.get(2));
 	   account.editInfoLname().click();
-	   Thread.sleep(3000);
+	   driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	   account.editInfoLname().clear();
 	   account.editInfoLname().sendKeys(Lname.get(2));
 	   account.editInfoEmail().click();
@@ -205,7 +147,7 @@ public class AccountMainPageTest extends BaseTest
 	   expectedError = driver.findElement(By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]")).getText();
 	   expectedError=expectedError.substring(1);
 	   message= (expectedError.length() == actualError.length()) ? "Wrong Information Provided" : "SuccessFully Edited" ;
-	   System.out.println(message);
+	   if(var==1)
 	   logger.info(message+" For "+Fname.get(2));
 	}
 	
@@ -226,7 +168,7 @@ public class AccountMainPageTest extends BaseTest
 		expectedError = driver.findElement(By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]")).getText();
 		expectedError=expectedError.substring(1);
 		message= (expectedError.length() == actualError.length()) ? "Wrong Information" : "SuccessFully Edited" ;
-		System.out.println(message);
+		if(var==1)
 		logger.info(message);
 	}
 	
@@ -246,7 +188,7 @@ public class AccountMainPageTest extends BaseTest
 		expectedError = driver.findElement(By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]")).getText();
 		expectedError=expectedError.substring(1);
 		message= (expectedError.length() == actualError.length()) ? "Wrong Information" : "SuccessFully Edited" ;
-		System.out.println(message);
+		if(var==1)
 		logger.info(message);
 	}
 	
@@ -264,7 +206,7 @@ public class AccountMainPageTest extends BaseTest
 		expectedError = driver.findElement(By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]")).getText();
 		expectedError=expectedError.substring(1);
 		message= (expectedError.length() == actualError.length()) ? "Wrong Information" : "SuccessFully Edited" ;
-		System.out.println(message);
+		if(var==1)
 		logger.info(message);
 	}
 	
@@ -273,6 +215,7 @@ public class AccountMainPageTest extends BaseTest
 	{
 		account.accountLink().click();
 		account.manageAddressBook().click();
+		if(var==1)
 		logger.info("Successfully redirected to Address Book");
 	}
 	
@@ -285,7 +228,7 @@ public class AccountMainPageTest extends BaseTest
 		account.manageAddressBookEdit().click();
 		account.manageAddressBookEditCity().click();
 		account.manageAddressBookEditCity().clear();
-		account.manageAddressBookEditCity().sendKeys(city);
+		account.manageAddressBookEditCity().sendKeys(data.get(0));
 		//account.manageAddressBookEditState().click();
 		//account.manageAddressBookEditPostCode().click();
 		//account.manageAddressBookEditPostCode().clear();
@@ -295,7 +238,7 @@ public class AccountMainPageTest extends BaseTest
 		expectedError = driver.findElement(By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]")).getText();
 		expectedError=expectedError.substring(1);
 		message= (expectedError.length() == actualError.length()) ? "Wrong Information" : "SuccessFully Edited" ;
-		System.out.println(message);
+		if(var==1)
 		logger.info(message);
 	}
 	
@@ -303,15 +246,17 @@ public class AccountMainPageTest extends BaseTest
 	public void addressBookNew() throws InterruptedException
 	{
 		String actualError=actualError = "Oops, there is an error with information provided!";
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		account.manageAddressBooknew().click();
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		account.manageAddressbookNewFname().click();
-		account.manageAddressbookNewFname().sendKeys(fname);
+		account.manageAddressbookNewFname().sendKeys(data.get(2));
 		account.manageAddressBookNewLname().click();
-		account.manageAddressBookNewLname().sendKeys(lname);
+		account.manageAddressBookNewLname().sendKeys(data.get(3));
 		account.manageAddressBookNewAddress().click();
-		account.manageAddressBookNewAddress().sendKeys(address);
+		account.manageAddressBookNewAddress().sendKeys(data.get(4));
 		account.manageAddressBookNewCity().click();
-		account.manageAddressBookNewCity().sendKeys(city2);
+		account.manageAddressBookNewCity().sendKeys(data.get(5));
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		account.manageAddressBookNewCountry().click();
 		account.manageAddressBookNewCountry().sendKeys("India");
@@ -320,14 +265,14 @@ public class AccountMainPageTest extends BaseTest
 		account.manageAddressBookNewState().sendKeys("Maharashtra");
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		account.manageAddressBookNewZipcode().click();
-		account.manageAddressBookNewZipcode();
+		account.manageAddressBookNewZipcode().sendKeys(data.get(6));
 		//account.manageAddressBookNewZipcode().sendKeys(zipcode2);
 		account.manageAddressBookNewContinue().click();	
 		account.accountLink().click();
 		expectedError = driver.findElement(By.xpath("//body/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]")).getText();
 		expectedError=expectedError.substring(1);
 		message= (expectedError.length() == actualError.length()) ? "Wrong Information" : "SuccessFully Added" ;
-		System.out.println(message);
+		if(var==1)
 		logger.info(message);
 	}
 	
@@ -336,6 +281,7 @@ public class AccountMainPageTest extends BaseTest
 	{
 		account.wishList().click();
 		account.accountLink().click();
+		if(var==1)
 		logger.info("Successfully redirected to Wishlist");
 	}
 	
@@ -344,21 +290,21 @@ public class AccountMainPageTest extends BaseTest
 	{
 		account.wishList().click();
 		account.wishListContinue().click();
-		driver.get("http://localhost/public_html/index.php?rt=account/account");
+		if(var==1)
 		logger.info("Successfully redirected to Product Page");
 	}
 	
 	
-	/*public void wishlistAddToCartFromWishlist()
+	public void wishlistAddToCartFromWishlist()
 	{
 		account.wishList().click();
 		//account.wishListContinue().click();
 		account.clickAddToCart();
-		driver.get("http://localhost/public_html/index.php?rt=account/account");
+		//driver.get("http://localhost/public_html/index.php?rt=account/account");
 	}
 	
-	@Test
-	public void wishlistDeleteItemFromWishlist()
+	//@Test
+	/*public void wishlistDeleteItemFromWishlist()
 	{
 		
 		account.wishList().click();
@@ -372,6 +318,7 @@ public class AccountMainPageTest extends BaseTest
 		account.accountLink1().click();
 		account.orderHistory().click();
 		account.accountLink1().click();
+		if(var==1)
 		logger.info("Successfully redirected to Order History");
 		
 	}
@@ -382,6 +329,7 @@ public class AccountMainPageTest extends BaseTest
 		
 		account.transactionHistory().click();
 		account.accountLink().click();
+		if(var==1)
 		logger.info("Successfully redirected to Transaction History");
 	}
 	
@@ -390,6 +338,7 @@ public class AccountMainPageTest extends BaseTest
 	{
 		account.downloads().click();
 		account.accountLink().click();
+		if(var==1)
 		logger.info("Successfully redirected to Downloads");
 	}
 	
@@ -397,6 +346,7 @@ public class AccountMainPageTest extends BaseTest
 	public void logoffCheck()
 	{
 		account.logoff().click();
+		if(var==1)
 		logger.info("Successfully Logged off");
 	}
 	
@@ -405,6 +355,6 @@ public class AccountMainPageTest extends BaseTest
 	public void logoffCheck1()
 	{
 		System.out.println("Hi");
-		Assert.assertTrue(false);
+		//Assert.assertTrue(false);
 	}
 }
